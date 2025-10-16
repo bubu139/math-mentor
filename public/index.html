@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="App.css">
+    <title>CVT AI - Giải Toán THPT</title>
+    <script src="https://kit.fontawesome.com/8f62b2625c.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://www.geogebra.org/apps/deployggb.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    animation: {
+                        'fade-in': 'fade-in 0.3s ease-out',
+                    }
+                }
+            }
+        }
+    </script>
+     <script>
+        window.MathJax = { 
+            tex: { 
+                inlineMath: [['$', '$'], ['\\(', '\\)']], 
+                displayMath: [['$$', '$$'], ['\\[', '\\]']], 
+                processEscapes: true 
+            }, 
+            options: { 
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre'] 
+            } 
+        }; 
+    //     var params = {
+    //         "appName": "graphing", 
+    //         "width": 800, 
+    //         "height": 600, 
+    //         "showToolBar": true, 
+    //         "showAlgebraInput": true, 
+    //         "showMenuBar": true,
+    //         };
+    // var ggbApplet = new GGBApplet(params, true);
+    // window.addEventListener("load", function() { 
+    //     ggbApplet.inject('ggb-element');
+    // });
+    </script>
+ 
+</head>
+<body class="min-h-screen bg-gradient-to-br from-blue-50 via-white to-cyan-100 flex items-center justify-center p-2 sm:p-4">
+    <div id="ggb-element"></div>
+
+    <div class="w-full max-w-4xl h-[calc(100vh-1rem)] sm:h-[700px] bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col border border-blue-100">
+        
+        <!-- Header -->
+        
+        <div class="bg-gradient-to-r from-blue-500 to-cyan-500 px-4 sm:px-6 py-4 sm:py-5 flex items-center gap-3 sm:gap-4 shadow-lg">
+            <div class="relative">
+                <div class="w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-full flex items-center justify-center shadow-md">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bot w-7 h-7 text-blue-500">
+                <path d="M12 8V4H8"></path>
+                <rect width="16" height="12" x="4" y="8" rx="2"></rect>
+                <path d="M2 14h2"></path>
+                <path d="M20 14h2"></path>
+                <path d="M15 13v2"></path>
+                <path d="M9 13v2"></path>
+            </svg>
+                </div>
+                <div class="absolute bottom-0 right-0 w-3 h-3 bg-green-400 rounded-full border-2 border-white"></div>
+            </div>
+            <div class="flex-1 min-w-0">
+                <h1 class="text-lg sm:text-xl font-bold text-white truncate">📚 CVT AI - Giải Toán THPT</h1>
+                <p class="text-blue-100 text-xs sm:text-sm flex items-center gap-1">
+                    <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+                    Đang hoạt động
+                </p>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles w-6 h-6 text-orange-200 animate-pulse"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"></path><path d="M20 3v4"></path><path d="M22 5h-4"></path><path d="M4 17v2"></path><path d="M5 18H3">
+                        <path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"></path>
+                        <path d="M20 3v4"></path>
+                        <path d="M22 5h-4"></path>
+                        <path d="M4 17v2"></path>
+                        <path d="M5 18H3"></path>
+                        
+                        
+                        
+                        </svg>
+        </div>
+
+        <!-- Messages Container -->
+        <div class="flex-1 overflow-y-auto px-4 sm:px-6 py-4 sm:py-6 space-y-3 sm:space-y-4 bg-gradient-to-b from-white to-blue-50 scrollbar-hide" id="messages-container">
+            <!-- Messages will be inserted here -->
+            <!--<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bot w-6 h-6 text-white"><path d="M12 8V4H8"></path><rect width="16" height="12" x="4" y="8" rx="2"></rect><path d="M2 14h2"></path><path d="M20 14h2"></path><path d="M15 13v2"></path><svg d="M9 13v2">
+                <path d="M12 8V4H8"></path>
+                <rect width="16" height="12" x="4" y="8" rx="2"></rect>
+                <path d="M2 14h2"></path>
+                <path d="M20 14h2"></path>
+                <path d="M15 13v2"></path>
+                <path d="M9 13v2"></path>
+            </svg>     -->
+        </div>
+
+        <!-- Input Area -->
+        <div class="px-4 sm:px-6 py-4 sm:py-5 bg-white border-t border-blue-100">
+            <div id="attached-files" class="flex flex-wrap gap-2 mb-2 sm:mb-3">
+                <!-- Attached files will be inserted here -->
+            </div>
+            
+            <div class="flex gap-2 sm:gap-3 items-end">
+                <input type="file" multiple accept=".pdf,.doc,.docx,.txt,image/*" id="file-input" class="hidden">
+                
+                <button id="file-button" class="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 bg-blue-100 hover:bg-blue-200 text-blue-600 rounded-xl flex items-center justify-center transition-all duration-200">
+                    <i class="fa-solid fa-plus text-base sm:text-lg"></i>
+                </button>
+                
+                <div class="flex-1 relative min-w-0">
+                    <textarea
+                        id="input-textarea"
+                        placeholder="Nhập câu hỏi của bạn..."
+                        rows="1"
+                        class="w-full px-3 sm:px-5 py-2 sm:py-3 pr-8 sm:pr-12 bg-blue-50 border-2 border-blue-200 rounded-2xl focus:outline-none focus:border-blue-400 focus:bg-white resize-none transition-all duration-200 text-gray-800 placeholder-gray-400 text-sm sm:text-base"
+                        style="min-height: 40px; max-height: 100px;"
+                    ></textarea>
+                </div>
+                
+                <button id="send-button" class="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white rounded-xl flex items-center justify-center transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105 active:scale-95">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 sm:w-5 sm:h-5">
+                        <line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22,2 15,22 11,13 2,9 22,2"></polygon>
+                    </svg>
+                </button>
+            </div>
+            
+            <p class="text-xs text-gray-400 mt-2 sm:mt-3 text-center">
+                Nhấn Enter để gửi • Shift + Enter để xuống dòng
+            </p>
+        </div>
+    </div>
+
+  
+  <!-- ---------------------------------------------------------------------------------------------------------- -->
+    <!-- Nút tiện ích nổi -->
+<div id="utilityButton" class="utility-btn" onclick="toggleMenu()" >
+    <i class="fas fa-plus"></i>
+</div>
+
+<!-- Menu tiện ích -->  
+<div id="utilityMenu" class="utility-menu" >
+    <div class="utility-menu-items">
+        <div class="utility-item" onclick="openGeoGebra()">
+            <i class="fas fa-calculator"></i>
+        </div>
+        <div class="utility-item">
+            <i class="fas fa-book"></i>
+        </div>
+        <div class="utility-item">
+            <i class="fas fa-chart-line"></i>
+        </div>
+        <div class="utility-item">
+            <i class="fas fa-pencil-alt"></i>
+        </div>
+        <div class="utility-item">
+            <i class="fas fa-lightbulb"></i>
+        </div>
+        <div class="utility-item">
+            <i class="fas fa-cog"></i>
+        </div>
+    </div>
+</div>
+
+<!-- Cửa sổ GeoGebra -->
+<div id="geogebraWindow" class="geogebra-window">
+    <div class="geogebra-header" id="geogebraHeader">
+        <h3>
+            <i class="fas fa-calculator"></i> 
+            <span>GeoGebra Calculator</span>
+        </h3>
+        <div class="geogebra-controls">
+            <button onclick="minimizeGeoGebra()" title="Thu nhỏ">
+                <i class="fas fa-minus"></i>
+            </button>
+            <button onclick="maximizeGeoGebra()" title="Phóng to">
+                <i class="fas fa-expand"></i>
+            </button>
+            <button class="close-btn" onclick="closeGeoGebra()" title="Đóng">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+    <div class="geogebra-content">
+        <div id="ggb-window"></div>
+        
+        <!-- 8 điểm resize -->
+        <div class="resize-handle top-left" data-direction="top-left"></div>
+        <div class="resize-handle top" data-direction="top"></div>
+        <div class="resize-handle top-right" data-direction="top-right"></div>
+        <div class="resize-handle right" data-direction="right"></div>
+        <div class="resize-handle bottom-right" data-direction="bottom-right"></div>
+        <div class="resize-handle bottom" data-direction="bottom"></div>
+        <div class="resize-handle bottom-left" data-direction="bottom-left"></div>
+        <div class="resize-handle left" data-direction="left"></div>
+    </div>
+</div>
+
+<!-- Overlay tối -->
+<div id="geogebraOverlay" class="overlay" onclick="closeGeoGebra()"></div>
+<script src="App.js"></script>
+</body>
+</html>
